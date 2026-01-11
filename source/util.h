@@ -6,6 +6,10 @@
 #define APPEAR_REL_POS_X 3
 #define APPEAR_REL_POS_Y -2
 #define BLOCK_BASE_SE 640  // Where the block tiles start in bg.bmp
+#define NEXT_REL_POS_X 13
+#define NEXT_REL_POS_Y 3
+
+extern int next_type;
 
 typedef struct
 {
@@ -38,8 +42,10 @@ bool can_left(Block4 curr, int field[][10]);
 bool can_right(Block4 curr, int field[][10]);
 void rot_if_possible(Block4 *curr, int field[][10]);
 
-void clear_lines(Block4 curr, int field[][10]);
+void clear_lines(Block4 curr, int field[][10], int *score);
 
 bool is_game_over(int field[][10]);
+
+void reset_game(int field[][10], int *score);
 
 #endif
